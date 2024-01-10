@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.util.List;
 
 @RestController
 @RequestMapping("/admin/courses")
@@ -28,12 +29,16 @@ public class CourseController {
     private CourseService courseService;
 
     @PostMapping("/add")
-    public ResponseEntity<CourseResponse> addCourse(@RequestParam("course") String data,
+    public ResponseEntity<String> addCourse(@RequestParam("course") String data,
                                                     @RequestParam("file") MultipartFile file) throws IOException {
         Course course = mapper.readValue(data,Course.class);
 
 
         return courseService.addCourse(path,course,file);
+    }
+    @GetMapping
+    public ResponseEntity<List<CourseResponse>> displayCourses(){
+        return courseService.displayCourses();
     }
 
 

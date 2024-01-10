@@ -8,5 +8,11 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CourseResponse {
-    private String message;
+    private Long id;
+    private String courseTitle;
+    private String courseDescription;
+    private String thumbnail;
+    private int price;
+
+
 }
