@@ -1,5 +1,6 @@
 package com.LMS.Learning.Management.services.courseservices;
 
+import com.LMS.Learning.Management.entities.CourseEntity;
 import com.LMS.Learning.Management.models.courses.Course;
 import com.LMS.Learning.Management.models.courses.CourseResponse;
 import com.LMS.Learning.Management.repositories.CoursesRepository;
