@@ -34,11 +34,16 @@ public class CourseController {
         Course course = mapper.readValue(data,Course.class);
 
 
-        return courseService.addCourse(path,course,file);
+        return courseService.addCourse(course,file);
     }
     @GetMapping
     public ResponseEntity<List<CourseResponse>> displayCourses(){
         return courseService.displayCourses();
+    }
+
+   @GetMapping("/photo")
+    public ResponseEntity<?> displayPhoto(@RequestParam("fileName") String fileName){
+        return courseService.returnPhoto(fileName);
     }
 
 

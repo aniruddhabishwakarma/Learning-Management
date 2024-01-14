@@ -10,7 +10,9 @@ import java.util.List;
 
 @Service
 public interface CourseService {
-    ResponseEntity<String> addCourse(String path, Course course, MultipartFile file);
+    ResponseEntity<String> addCourse(Course course, MultipartFile file);
 
     ResponseEntity<List<CourseResponse>> displayCourses();
+
+    ResponseEntity<?> returnPhoto(String fileName);
 }
